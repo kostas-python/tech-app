@@ -2,8 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss','@heroicons/vue',],
   css: [
-    '~/assets/css/tailwind.css',
+    '@/assets/css/tailwind.css',
   ],
 })
