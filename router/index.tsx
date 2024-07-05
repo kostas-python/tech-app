@@ -4,7 +4,7 @@ import Home from "~/pages/Home.vue";
 import Index from "~/pages/Index.vue";
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
+  { path: '/NavBar', name: 'NavBar', component: Home },
   { path: '/index', name: 'Index', component: Index },
 ];
 
