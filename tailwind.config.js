@@ -4,14 +4,17 @@ export default {
   content: [
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
-    './pages/**/*.vue',
+    './pages/**/*.{js,ts,jsx,tsx,mdx.vue}',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    '.assets/css/tailwind.css'
+    './assets/css/tailwind.css'
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
 
