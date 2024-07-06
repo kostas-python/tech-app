@@ -1,6 +1,6 @@
 
   <template>
-  <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-b from-violet-950 to-gray-900">
+  <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-b from-violet-950 to-gray-800">
     <!-- Calendar Component -->
     <el-calendar v-model="value" class="w-9/12 mb-20 border border-gray-300 rounded-lg shadow-md"/>
 
