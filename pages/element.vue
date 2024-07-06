@@ -1,6 +1,9 @@
-<template>
-  <div>
-    <el-calendar v-model="value" />
+
+  <template>
+  <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gradient-to-b from-violet-950 to-gray-900">
+    <!-- Calendar Component -->
+    <el-calendar v-model="value" class="w-9/12 mb-20 border border-gray-300 rounded-lg shadow-md"/>
+
     <div class="demo-image__lazy ">
       <el-image v-for="url in urls" :key="url" :src="url" lazy />
     </div>
