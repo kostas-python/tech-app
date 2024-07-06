@@ -1,12 +1,13 @@
 
 <template>
-  <div className="flex flex-col items-center justify-center h-4/6 p-4 bg-gradient-to-b from-violet-950 to-gray-800">
+  <div class="flex flex-col items-center justify-center h-4/6 p-4 bg-gradient-to-b from-violet-950 to-gray-800">
     <!-- Calendar Component -->
     <el-calendar v-model="value" class="w-9/12 mb-10 border border-gray-300 rounded-lg shadow-md bg-white transform transition-transform duration-300 hover:scale-105" />
-
-    </div><!-- Image Lazy-loading Component -->
+ </div>
+ 
+    <!-- Image Lazy-loading Component -->
     <div class="demo-image__lazy">
-      <el-image v-for="url in urls" :key="url" :src="url" lazy />
+      <el-image v-for="url in urls" :key="url" :src="url" lazy class="block h-auto rounded-sm shadow-lg"/>
     </div>
   
 </template>
@@ -36,13 +37,11 @@ const urls = ref([
 .demo-image__lazy {
   height: 800px;
   overflow-y: auto;
-  border-radius: 8px
 }
 .demo-image__lazy .el-image {
   display: block;
   min-height: 200px;
   margin-bottom: 10px;
-  border-radius: 8px
 }
 .demo-image__lazy .el-image:last-child {
   margin-bottom: 0;
