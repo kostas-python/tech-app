@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
   modules: [
-    '@nuxtjs/tailwindcss','@element-plus/nuxt'
+    '@nuxtjs/tailwindcss','@element-plus/nuxt','@vueuse/nuxt',
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
