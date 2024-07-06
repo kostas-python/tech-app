@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss','@element-plus/nuxt'
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     viewer: true
   },
   css: [
-    '@/assets/css/tailwind.css'
-  ]
+    '@/assets/css/tailwind.css', '@/assets/element-variables.scss'
+  ],
+  plugins: [
+    '@/plugins/element-plus.ts'
+  ],
 })
