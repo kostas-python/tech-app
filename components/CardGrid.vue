@@ -1,11 +1,14 @@
 
 <template>
-  <div class="bg-indigo-200  py-24 sm:py-32 ">
+  <div class="bg-[url('/images/Hypercolor-Gradient.jpeg')] py-24 sm:py-32 ">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
-        <h2  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team!</h2>
+        <h2  ref="el" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team!</h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.</p>
       </div>
+      <button ref="myHoverableElement" class="mt-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-lg h-8 w-20">
+    {{ isHovered ? 'Thank you!' : 'Hover me!'}}
+  </button>
 
       <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <li v-for="person in people" :key="person.name" class="relative" :style="person.style" :class="person.hoverClass">
@@ -38,12 +41,39 @@
 </template>
 
 
-<script setup>
+<script setup lang="ts">
 import { useMotion } from '@vueuse/motion';
+import { useElementHover, type MaybeElement } from '@vueuse/core'
+import { ref } from 'vue';
+import { useAnimate } from '@vueuse/core'
+
+const el = shallowRef<MaybeElement>();
+
+  // Animation section //
+
+useAnimate(
+  el,
+  [
+    { clipPath: 'circle(10% at 0% 30%)' },
+    { clipPath: 'circle(10% at 50% 50%)' },
+    { clipPath: 'circle(10% at 100% 30%)' },
+  ],
+  {
+    duration: 2000,
+    iterations: 5,
+    direction: 'alternate',
+    easing: 'cubic-bezier(0.46, 0.03, 0.52, 0.96)',
+  },
+);
+
+  // Button Hover //
+  
+const myHoverableElement = ref()
+const isHovered = useElementHover(myHoverableElement)
+
+useMotion(myHoverableElement)
 
 
-
-useMotion()
 
 const people = [
   {
@@ -129,7 +159,7 @@ const people = [
 
 </script>
 
-<style>
+<style scoped>
 .card {
   transform: translate(var(--x), var(--y));
   transition: transform 0.3s ease-in-out;
@@ -138,4 +168,5 @@ const people = [
 .card.hover:scale-105 {
   transform: translate(var(--x), var(--y)) scale(1.05);
 }
+
 </style>
