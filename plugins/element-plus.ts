@@ -1,4 +1,4 @@
-// plugins/element-plus.ts
+
 
 import { defineNuxtPlugin } from '#app'
 import ElementPlus from 'element-plus'

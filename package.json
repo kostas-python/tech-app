@@ -20,8 +20,7 @@
     "nuxt": "^3.12.3",
     "tailwindcss-aspect-ratio": "^3.0.0",
     "vue": "latest",
-    "vue-router": "^4.4.0",
-    "vuetify": "^3.6.0-beta.0.0"
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.9",
@@ -33,6 +32,8 @@
     "postcss": "^8.4.39",
     "sass": "^1.77.6",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vuetify": "^3.6.11"
   }
 }

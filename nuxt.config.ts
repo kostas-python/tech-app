@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { defineNuxtConfig } from 'nuxt/config'
+import { defineNuxtConfig } from 'nuxt/config';
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 
 export default defineNuxtConfig({
@@ -8,14 +9,27 @@ export default defineNuxtConfig({
       alias: {
         '@heroicons/vue': '@heroicons/vue'
       }
-    }
+    },
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
   },
+  
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
   modules: [
     '@nuxtjs/tailwindcss','@element-plus/nuxt',
-    '@vueuse/nuxt', '@vueuse/motion/nuxt'
+    '@vueuse/nuxt', '@vueuse/motion/nuxt',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
   ],
+
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
     configPath: '~/tailwind.config.js',
@@ -31,7 +45,7 @@ export default defineNuxtConfig({
     '@/plugins/element-plus.ts'
   ],
   build: {
-    transpile: ['@vueuse/motion']
+    transpile: ['@vueuse/motion', 'vuetify'],
   },
   vueuse: {
     ssrHandlers: true
