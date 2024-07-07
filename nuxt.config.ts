@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from 'nuxt/config';
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { transformAssetUrls } from 'vite-plugin-vuetify'
 
 
 export default defineNuxtConfig({
@@ -22,16 +22,13 @@ export default defineNuxtConfig({
       modules: [
         '@nuxtjs/tailwindcss','@element-plus/nuxt',
         '@vueuse/nuxt', '@vueuse/motion/nuxt',
-        (_options, nuxt) => {
-          nuxt.hooks.hook('vite:extendConfig', (config) => {
-            // @ts-expect-error
-            config.plugins.push(vuetify({ autoImport: true }))
-          })
-        },
+        
       ],
 
       tailwindcss: {
-        cssPath: '~/assets/css/tailwind.css',
+        cssPath: [
+          '~/assets/css/tailwind.css', 
+          { injectPosition: 0 }],
         configPath: '~/tailwind.config.js',
         exposeConfig: false,
         config: {},
