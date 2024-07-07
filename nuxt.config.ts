@@ -13,7 +13,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2024-07-04",
   modules: [
-    '@nuxtjs/tailwindcss','@element-plus/nuxt','@vueuse/nuxt',
+    '@nuxtjs/tailwindcss','@element-plus/nuxt',
+    '@vueuse/nuxt', '@vueuse/motion/nuxt'
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -29,4 +30,10 @@ export default defineNuxtConfig({
   plugins: [
     '@/plugins/element-plus.ts'
   ],
+  build: {
+    transpile: ['@vueuse/motion']
+  },
+  vueuse: {
+    ssrHandlers: true
+  }
 })
