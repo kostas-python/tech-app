@@ -4,7 +4,6 @@
 "compilerOptions": {
     "types": ["@vueuse/motion", 
       "@types/node", 
-      "@nuxt/vue-app",
     ]
   
   }
