@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     viewer: true
   },
   css: [
-    '@/assets/css/tailwind.css', '@/assets/element-variables.scss'
+    '~/assets/css/tailwind.css', '@/assets/element-variables.scss'
   ],
   plugins: [
     '@/plugins/element-plus.ts'

@@ -56,7 +56,7 @@
 
   
   const navigation = [
-    { name: 'Tailwind', href: '/' },
+    { name: 'Tailwind', href: '/tailwind' },
     { name: 'Vuetify', href: '/vuetify' },
     { name: 'VueUse', href: 'vueUse' },
     { name: 'Element Plus', href: 'element' },
