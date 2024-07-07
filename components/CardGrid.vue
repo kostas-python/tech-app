@@ -1,10 +1,10 @@
 
 <template>
-  <div class="bg-[url('/images/Hypercolor-Gradient.jpeg')] py-24 sm:py-32 ">
+  <div class="bg-gradient-to-r from-gray-500 from-20% via-sky-500 via-30% to-emerald-800 to-90% bg-cover py-24 sm:py-32 ">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0">
         <h2  ref="el" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team!</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-600">We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.</p>
+        <p class="mt-6 text-lg leading-8 text-gray-300">We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.</p>
       </div>
       <button ref="myHoverableElement" class="mt-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-lg h-8 w-20">
     {{ isHovered ? 'Thank you!' : 'Hover me!'}}

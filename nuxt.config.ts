@@ -48,7 +48,7 @@ export default defineNuxtConfig({
       ],
 
       build: {
-        transpile: ['@vueuse/motion', 'vuetify'],
+        transpile: ['@vueuse/motion'],
       },
 
       vueuse: {

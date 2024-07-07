@@ -24,7 +24,6 @@ import { defineComponent, h } from 'vue'
 const navigation = {
   main: [
     { name: 'Tailwind', href: '/' },
-    { name: 'Vuetify', href: 'vuetify' },
     { name: 'VueUse', href: 'vueuse' },
     { name: 'ElementPlus', href: 'element' },
   ],

@@ -5,7 +5,6 @@
     "types": ["@vueuse/motion", 
       "@types/node", 
       "@nuxt/vue-app",
-      "@nuxtjs/vuetify"
     ]
   
   }
