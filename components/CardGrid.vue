@@ -6,9 +6,6 @@
         <h2  ref="el" class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Team!</h2>
         <p class="mt-6 text-lg leading-8 text-gray-300">We're a dynamic group of individuals who are passionate about what we do and dedicated to delivering the best results for our clients.</p>
       </div>
-      <button ref="myHoverableElement" class="mt-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 rounded-lg h-8 w-20">
-    {{ isHovered ? 'Thank you!' : 'Hover me!'}}
-  </button>
 
       <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <li v-for="person in people" :key="person.name" class="relative" :style="person.style" :class="person.hoverClass">
